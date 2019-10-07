@@ -1,6 +1,7 @@
 function spotEachRebel(rebels) {
   var spottedRebelCalls = []
-
+  var i;
+  for (i = 0; i < rebels.length; i = i + 1)  
   if (rebels) {
     spottedRebelCalls.push('Look! Rebel scum!')
   }
@@ -11,24 +12,22 @@ function spotEachRebel(rebels) {
 function seeRebelsEscape(rebels) {
   var escapedRebelCalls = []
   var i = 0
-
-  do {
+  while (rebels[i] && rebels[i]['plotArmor']) {
     escapedRebelCalls.push('Oh no! They\'re getting away!')
-    i++
-  } while (rebels[i] && rebels[i]['plotArmor'])
-
+    i++ 
+  }
   return escapedRebelCalls
 }
 
 function shootAtNothing() {
   var shotsAtNothing = []
-
-  for (var i = 1; i < 4; i++) {
-    shotsAtNothing.push('pew')
+  for (var i = 0; i < 4; i++) {
+   shotsAtNothing.push('pew')
   }
-
+ 
   return shotsAtNothing
 }
+
 
 module.exports.deliverStormTroopersEscapeScene = function (rebels) {
   var sceneSequence = []
